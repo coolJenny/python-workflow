@@ -1,0 +1,16 @@
+language: python
+python:
+    - "3.6"
+    - "3.6-dev"
+    - "nightly"
+
+sudo: false
+cache: pip
+
+before_install:
+    - cd cherry_picker
+install:
+    - pip install --upgrade flit
+    - flit install
+script:
+    - pytest cherry_picker/test.py -v
